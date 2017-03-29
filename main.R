@@ -1,5 +1,5 @@
 rm(list = ls())
-setwd("~/Desktop/Capstone/DHSTeam1") # change to where you put your data
+setwd("~/Desktop/Capstone/DHSTeam1") # change to where you put DHSTeam1 folder
 
 library(readxl)
 dat1 <- read_excel("DHS_Case_Clients_2016EntryCohort.xlsx", 
@@ -31,7 +31,6 @@ finalData <- getFinalData(placeDataNew, serviceDataNew)
 
 source("functions/shuning/Boxplot.R")
 library(ggplot2)
-# run one by one so that you can see all the graphs
 generateBoxPlot(finalData)
 g1 <- generateHousingBoxPlot(finalData)
 g2 <- generateBehaviorBoxPlot(finalData)
