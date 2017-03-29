@@ -37,9 +37,6 @@ g1 <- generateHousingBoxPlot(finalData)
 g2 <- generateBehaviorBoxPlot(finalData)
 g3 <- generateNutritionBoxPlot(finalData)
 g4 <- generateMentalBoxPlot(finalData)
-multiplot(g1, g2, g3, g4, cols=2)
-
-
 
 multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
   require(grid)
@@ -76,6 +73,12 @@ multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
     }
   }
 }
+
+multiplot(g1, g2, g3, g4, cols=2)
+
+
+
+
 
 
 
