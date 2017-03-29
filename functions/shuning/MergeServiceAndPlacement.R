@@ -1,5 +1,3 @@
-### Shuning's Code
-
 # get final data
 getFinalData <- function(placeData, serviceData){
   print(paste("Does the case ids in place data and service data match?", 
@@ -8,6 +6,3 @@ getFinalData <- function(placeData, serviceData){
     mutate(placement = placeData$isPlacedFromAny)
   return(finalData)
 }
-
-### how to call these functions
-finalData <- getFinalData(placeDataNew, serviceDataNew2)

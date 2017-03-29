@@ -39,7 +39,7 @@ getPlaceData <- function(mergedData){
     select(CLIENT_ID, CASE_ID, ACCEPT_REASON) %>% 
     mutate(isplaced=grepl("placed",ACCEPT_REASON)) %>% 
     group_by(CASE_ID) %>% 
-    summarise(chplaced=sum(isplaced) %>% as.logical)
+    summarise(isPlacedFromAcceptReason=sum(isplaced) %>% as.logical)
   return(placeData)
 }
 
@@ -50,7 +50,7 @@ getPlaceData <- function(mergedData){
 # dat2 <- read_excel("~/Desktop/Capstone/DHS_CrossSystem.xlsx", 
 #                    sheet = "SystemInvolvement_EC2016") # 8206 obs
 # mergedData <- mergeData(dat1, dat2) # 8084 obs
-# placeData <- getPlaceData(mergedData)
+placeData <- getPlaceData(mergedData)
 
 
 
