@@ -21,6 +21,7 @@ table(placeData2$isPlacedFromCrossSystem) # from CrossSystem
 placeDataNew <- placeData %>%
   mutate(isPlacedFromCrossSystem = placeData2$isPlacedFromCrossSystem) %>%
   mutate(isPlacedFromAny= isPlacedFromAcceptReason | isPlacedFromCrossSystem)
+table(placeDataNew$isPlacedFromAny)
 
 source("functions/shuning/GetNumberOfServices.R")
 serviceDataNew <- calAverNumServiceFamily(mergedData)
@@ -30,6 +31,12 @@ finalData <- getFinalData(placeDataNew, serviceDataNew)
 
 source("functions/shuning/Boxplot.R")
 library(ggplot2)
+# run one by one so that you can see all the graphs
 generateBoxPlot(finalData)
+generateHousingBoxPlot(finalData)
+generateBehaviorBoxPlot(finalData)
+generateNutritionBoxPlot(finalData)
+generateMentalBoxPlot(finalData)
+
 
 
